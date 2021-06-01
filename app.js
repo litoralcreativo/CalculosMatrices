@@ -9,6 +9,7 @@ const Determinante = (mat) => {
   for (let row = 0; row < mat.length - 1; row++) {
     extended.push(mat[row]);
   }
+  console.table(extended);
 
   let str = "Det = ";
   let negStr = "";
@@ -16,15 +17,20 @@ const Determinante = (mat) => {
   let positive = 0;
   let negative = 0;
 
-  for (let r = 0; r < extended.length - cols + 1; r++) {
+  for (let i = 0; i < mat.length; i++) {
     let pos_mul = 1;
     let neg_mul = 1;
-    for (let c = 0; c < mat[r].length; c++) {
-      const posItem = extended[r + c][c];
-      const negItem = extended[r + c][mat[r].length - 1 - c];
-      pos_mul *= posItem;
-      neg_mul *= negItem;
-      str += posItem + "*";
+    for (let r = i; r < rows; r++) {
+      for (let c = 0; c < cols; c++) {
+        if (r == c) {
+          const posItem = extended[r][c];
+          const negItem = extended[r][mat[r].length - 1 - c];
+          pos_mul *= posItem;
+          neg_mul *= negItem;
+          str += posItem + "*";
+          console.log(pos_mul);
+        }
+      }
     }
     positive += pos_mul;
     negative += neg_mul;
