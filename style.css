@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+#container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(180, 180, 180);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs button {
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+}
+
+#matrix_size {
+  padding: 5px;
+  margin: 0px 5px;
+  width: 100%;
+  text-align: center;
+}
+
+.hide {
+  display: none !important;
+}
+
+#matrix {
+  padding: 20px;
+}
+
+.mat_item {
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin: 5px;
+}
+
+#matrix_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CUSTOM PARTS */
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

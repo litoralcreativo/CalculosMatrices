@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Matrices</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="matrix_generator" class="inputs">
+        <label for="matrix_size"><h2>Tamaño de la matriz</h2></label>
+        <input
+          id="matrix_size"
+          step="1"
+          type="number"
+          min="1"
+          max="10"
+          value="1"
+          onchange="mat_crea_btn.innerHTML = `Crear Matriz ${value}x${value}`"
+        />
+        <button id="mat_crea_btn" onclick="createMatrix(matrix_size.value)">
+          Crear Matriz 1x1
+        </button>
+      </div>
+      <form
+        id="matrix_container"
+        class="hide"
+        onsubmit="return ComputeMatrix()"
+      >
+        <div id="matrix"></div>
+        <button type="submit">Calcular Determinante</button>
+      </form>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
