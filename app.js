@@ -17,23 +17,23 @@ const Determinante = (mat) => {
   let positive = 0;
   let negative = 0;
 
-  for (let i = 0; i < mat.length; i++) {
+  for (let i = 0; i < extended.length - rows + 1; i++) {
     let pos_mul = 1;
     let neg_mul = 1;
-    for (let r = i; r < rows; r++) {
+    for (let r = i; r < rows + i; r++) {
       for (let c = 0; c < cols; c++) {
-        if (r == c) {
+        if (r - i == c) {
           const posItem = extended[r][c];
-          const negItem = extended[r][mat[r].length - 1 - c];
+          const negItem = extended[r][extended[r].length - 1 - c];
           pos_mul *= posItem;
           neg_mul *= negItem;
-          str += posItem + "*";
-          console.log(pos_mul);
         }
       }
     }
     positive += pos_mul;
     negative += neg_mul;
+    console.log("positive: " + positive);
+    console.log("negative: " + negative);
   }
 
   return positive - negative;
